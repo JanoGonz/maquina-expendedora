@@ -1,4 +1,4 @@
-class MaquinaExpendedoraSimple {
+public class MaquinaExpendedoraSimple {
     
     // El precio del billete
     private int precioBillete;
@@ -16,12 +16,12 @@ class MaquinaExpendedoraSimple {
      * precio del billete y el origen y destino dados. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
-    public MaquinaExpendedoraSimple(int costeBillete, String origen, String destino) {
-        precioBillete = costeBillete;
+    public MaquinaExpendedoraSimple() {
+       precioBillete = 12;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
-        estacionOrigen = origen;
-        estacionDestino = destino;
+        estacionOrigen = "León";
+        estacionDestino = "Dubai";
     }
 
     /**
@@ -42,7 +42,12 @@ class MaquinaExpendedoraSimple {
      * Simula la introduccion de dinero por parte del cliente actual
      */
     public void introducirDinero(int cantidadIntroducida) {
-        balanceClienteActual = balanceClienteActual + cantidadIntroducida;
+        if (cantidadIntroducida < 0) {
+            System.out.println("No puedes introducir una cantidad de dinero negativa");
+        } else {
+            balanceClienteActual = balanceClienteActual + cantidadIntroducida;
+            System.out.println("Gracias por su dinero, su saldo es " + balanceClienteActual);
+        }
     }
 
     /**
@@ -50,16 +55,24 @@ class MaquinaExpendedoraSimple {
      */
     public void imprimirBillete() {
         // Simula la impresion de un billete
-        System.out.println("##################");
-        System.out.println("# Billete de tren:");
-        System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
-        System.out.println("# " + precioBillete + " euros.");
-        System.out.println("##################");
-        System.out.println();
-
-        // Actualiza el total de dinero acumulado en la maquina
-        totalDineroAcumulado = totalDineroAcumulado + balanceClienteActual;
-        // Queda preparada para el proximo cliente
-        balanceClienteActual = 0;
+        if (balanceClienteActual > 30) {
+            System.out.println("##################");
+            System.out.println("# Billete de tren:");
+            System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
+            System.out.println("# " + precioBillete + " euros.");
+            System.out.println("Su cambio es " + (balanceClienteActual - precioBillete) + " euros.");
+            System.out.println("##################");
+            // Actualiza el total de dinero acumulado en la maquina
+            totalDineroAcumulado = totalDineroAcumulado + precioBillete;
+            // Queda preparada para el proximo cliente
+            balanceClienteActual = 0;
+        } else {
+            System.out.println("No tienes suficiente dinero");
+        }
     }
+    
+    public int getDineroAcumulado() {
+        return totalDineroAcumulado;
+    }
+    
 }
