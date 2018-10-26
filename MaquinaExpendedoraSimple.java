@@ -83,4 +83,8 @@ public class MaquinaExpendedoraSimple {
         return totalDineroAcumulado;
     }
     
+    public void cambiarPrecioBillete(int nuevoPrecio) {
+        precioBillete = nuevoPrecio;
+        System.out.println("El nuevo precio es " + precioBillete + " euros.");
+    }
 }
