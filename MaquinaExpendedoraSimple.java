@@ -87,4 +87,12 @@ public class MaquinaExpendedoraSimple {
         precioBillete = nuevoPrecio;
         System.out.println("El nuevo precio es " + precioBillete + " euros.");
     }
+    
+    public void reducirPrecioBillete(int reducirPrecio) {
+        if (reducirPrecio<0){
+            reducirPrecio = reducirPrecio*-1;
+        }
+        precioBillete -= reducirPrecio;
+        System.out.println("El nuevo precio es " + precioBillete + " euros.");
+    }
 }
