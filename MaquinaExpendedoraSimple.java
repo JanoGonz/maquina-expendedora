@@ -63,7 +63,7 @@ public class MaquinaExpendedoraSimple {
      */
     public void imprimirBillete() {
         // Simula la impresion de un billete
-        if (balanceClienteActual > 30) {
+        if (balanceClienteActual >= precioBillete) {
             System.out.println("##################");
             System.out.println("# Billete de tren:");
             System.out.println("# De " + estacionOrigen + " a " + estacionDestino);
