@@ -95,4 +95,10 @@ public class MaquinaExpendedoraSimple {
         precioBillete -= reducirPrecio;
         System.out.println("El nuevo precio es " + precioBillete + " euros.");
     }
+    
+    public void vaciarDepositoDinero() {
+        totalDineroAcumulado = 0;
+        System.out.println("La cantidad de dinero acumulada en la máquina es ahora " + totalDineroAcumulado + ".");
+    }
+    
 }
