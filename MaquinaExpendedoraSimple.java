@@ -79,7 +79,7 @@ public class MaquinaExpendedoraSimple {
         }
     }
     
-    public int getDineroAcumulado() {
+    public int getDineroAcumu() {
         return totalDineroAcumulado;
     }
     
